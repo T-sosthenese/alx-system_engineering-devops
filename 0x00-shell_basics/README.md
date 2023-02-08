@@ -12,5 +12,10 @@
 11. Lists all files
 12. Printing file types
 13. Creating symbols
-14. Copying HTML files 
+14. Copying HTML files
+15. Moving uppercase files
+16. Cleaning emacs
+17. Trees
+18. Files separated by commas
+19. School file 
 
