@@ -12,8 +12,8 @@
 11. counting directories and subdirectories
 12. Displaying 10 newest lines
 13. Printing unique words
-14. Displaying lies with "root"
-15. Counnting the number of lines
+14. Displaying lines with "root"
+15. Counting the number of lines
 16. Displaying 3 lines after uniq pattern
 17. Displaying lines with the bin pattern
 18. Displaying linnes that start with letters
