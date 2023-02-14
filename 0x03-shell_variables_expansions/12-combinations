@@ -1,2 +1,2 @@
 #!/bin/bash
-echo ls -l {a..z}{a..z} | grep -v 'oo'
+echo ls -l {a..z}{a..z} | grep -v 'oo' | head -n 64
