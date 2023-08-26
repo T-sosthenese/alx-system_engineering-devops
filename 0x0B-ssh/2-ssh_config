@@ -1,4 +1,4 @@
 # Configuring the ssh configuration so as to login to a server without entering a password.
 Host *
       PasswordAuthentication no
-      IdentifyFile ~/.ssh/school
+      IdentityFile ~/.ssh/school
