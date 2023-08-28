@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# This script installs Nginx on a remote server.
+
+sudo apt update
+sudo apt install -y nginx
+
+# Creating a default nginx folder for pages
+sudo mkdir -p /var/www/html
+
+# Creating a default index.html file
+sudo touch /var/www/html/index
+sudo touch /var/www/html/index.html
+sudo touch /var/www/html/index.htm
+sudo touch /var/www/html/index.nginx-debian.html
+
+# Change ownership of the file and directories to current user
+# to allow file editing
+sudo chown -R "$USER":"$USER" /var/www/html/index
+sudo chown -R "$USER":"$USER" /var/www/html/index.html
+sudo chown -R "$USER":"$USER" /var/www/html/index.htm
+sudo chown -R "$USER":"$USER" /var/www/html/index.nginx-debian.html
+
+# Append 'Hello World!' to file
+echo "Hello World!" > /var/www/html/index
+echo "Hello World!" > /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.htm
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+# Add to firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Starting Nginx server
+sudo service nginx restart
