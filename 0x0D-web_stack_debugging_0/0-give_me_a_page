@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Apache on holbertonschool/265-0 container
+
 service apache2 start
