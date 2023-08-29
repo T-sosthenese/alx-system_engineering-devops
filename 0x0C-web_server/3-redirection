@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Permanently redirecting requests to another page
 
-# Install nginx
+# Install nginxi in the server
 sudo apt update
 sudo apt install -y nginx
 
