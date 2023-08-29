@@ -1,24 +1,11 @@
 #!/usr/bin/env bash
-# Configuring nginx server to have a custom 404 error page.
+# installs nginx server
 
-# Installing nginx
 sudo apt update
 sudo apt install -y nginx
-
-# Add a custom 404 error page to /etc/nginx/sites-enabled/default at line 53
-sudo sed -i "53s/.*/\t\terror_page 404 \/custom_404.html;\n\t\tlocation \/custom_404.html {\n\t\t\t\troot \/var\/www\/html;\n\t\t\t\tinternal;\n\t\t}/" /etc/nginx/sites-enabled/default
-
-# Create a default nginx folder for pages
-sudo mkdir -p /var/www/html
-
-# Create custom_404.html file
-sudo touch /var/www/html/custom_404.html
-
-# Change file ownership to current user to allow editing.
-sudo chown -R "$USER":"$USER" /var/www/html/custom_404.html
-
-# Overwrite file content
-echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
-
-# Restart nginx server
+echo "Hello World" > /var/www/html/index.html
+sudo sed -i "53s/.*/location \/redirect_me {\n\treturn 301 http:\/\/github.com\/\;\n}/" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sudo sed -i "/^\slocation.*/i \        error_page 404 /404.html;" /etc/nginx/sites-available/default 
 sudo service nginx restart
+sudo service nginx reload
