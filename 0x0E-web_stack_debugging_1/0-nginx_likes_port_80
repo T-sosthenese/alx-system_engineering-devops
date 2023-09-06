@@ -2,5 +2,5 @@
 # Changing nginx listening port to 80
 
 rm /etc/nginx/sites-enabled/default
-l -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
