@@ -15,7 +15,7 @@ if [ $# -eq 1 ]; then
     domain="$1"
     for i in "${subdomains[@]}"
     do
-        commandDig "$1" "$domain"
+        commandDig "$i" "$domain"
     done
 elif [ $# -eq 2 ]; then
     domain="$1"
